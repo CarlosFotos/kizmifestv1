@@ -1,0 +1,1192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KIZ.MI.FEST 2026 | Kizomba Misiones Festival</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #8a2be2;
+            --secondary-color: #ff6b6b;
+            --gold-color: #FFD700;
+            --dark-color: #1a1a2e;
+            --light-color: #f8f9fa;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            scroll-behavior: smooth;
+        }
+        
+        .logo-container {
+            text-align: center;
+            padding: 30px 0;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        }
+        
+        .main-logo {
+            font-family: 'Arial Black', sans-serif;
+            font-size: 4.5rem;
+            font-weight: 900;
+            color: white;
+            text-shadow: 3px 3px 10px rgba(0,0,0,0.3);
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+        
+        .dot {
+            color: var(--gold-color);
+        }
+        
+        .subtitle {
+            font-size: 1.8rem;
+            color: white;
+            font-weight: 300;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.7)), url('assets/img/fondo.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        .festival-dates {
+            font-size: 2rem;
+            background: rgba(255, 215, 0, 0.9);
+            color: var(--dark-color);
+            display: inline-block;
+            padding: 10px 30px;
+            border-radius: 50px;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+        
+        .location-badge {
+            font-size: 1.5rem;
+            background: var(--primary-color);
+            color: white;
+            display: inline-block;
+            padding: 8px 20px;
+            border-radius: 30px;
+            margin-top: 5px;
+        }
+        
+        .early-bird-banner {
+            background: linear-gradient(90deg, var(--gold-color), #FFA500);
+            color: var(--dark-color);
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-top: 15px;
+            border-radius: 10px;
+        }
+        
+        .full-pass-card {
+            border: 3px solid var(--gold-color);
+            border-radius: 15px;
+            background: linear-gradient(135deg, #fffaf0, #fff5e6);
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+            margin-top: 20px;
+        }
+        
+        .full-pass-card:before {
+            content: "EARLY BIRD";
+            position: absolute;
+            top: 10px;
+            right: -35px;
+            background: var(--primary-color);
+            color: white;
+            padding: 5px 35px;
+            transform: rotate(45deg);
+            font-weight: bold;
+            font-size: 0.8rem;
+        }
+        
+        .price-display {
+            font-size: 2.8rem;
+            font-weight: 900;
+            color: var(--primary-color);
+            margin: 15px 0;
+        }
+        
+        .price-display small {
+            font-size: 1.2rem;
+            color: #666;
+        }
+        
+        .phase-prices {
+            background: white;
+            border-radius: 10px;
+            padding: 15px;
+            margin-top: 15px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .phase-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .phase-row:last-child {
+            border-bottom: none;
+        }
+        
+        .phase-current {
+            background-color: rgba(255, 215, 0, 0.1);
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        
+        .hotel-card {
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.3s;
+            background: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        
+        .hotel-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .hotel-feature {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .hotel-feature i {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            width: 40px;
+        }
+        
+        .artist-card {
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s;
+            background: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            height: 100%;
+        }
+        
+        .artist-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .artist-img {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .instagram-handle {
+            color: #E4405F;
+            font-size: 0.9rem;
+            display: block;
+            margin-top: 5px;
+        }
+        
+        .theme-card {
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s;
+            background: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            height: 100%;
+        }
+        
+        .theme-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .form-section {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .transfer-info {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+            border-left: 4px solid var(--primary-color);
+        }
+        
+        .transfer-detail {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+            border-bottom: 1px solid #dee2e6;
+        }
+        
+        .transfer-detail:last-child {
+            border-bottom: none;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            padding: 12px 30px;
+            font-weight: bold;
+        }
+        
+        .btn-primary:hover {
+            background-color: #7a1fd1;
+            border-color: #7a1fd1;
+        }
+        
+        .btn-whatsapp {
+            background-color: #25D366;
+            border-color: #25D366;
+            color: white;
+            padding: 12px 30px;
+            font-weight: bold;
+        }
+        
+        .btn-whatsapp:hover {
+            background-color: #128C7E;
+            border-color: #128C7E;
+            color: white;
+        }
+        
+        .btn-copy {
+            background-color: #6c757d;
+            border-color: #6c757d;
+            color: white;
+            padding: 6px 12px;
+            font-size: 0.8rem;
+            margin-left: 10px;
+        }
+        
+        .btn-copy:hover {
+            background-color: #5a6268;
+            border-color: #545b62;
+            color: white;
+        }
+        
+        .section-title {
+            color: var(--primary-color);
+            font-weight: 700;
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100px;
+            height: 3px;
+            background: var(--secondary-color);
+        }
+        
+        .emoji-list {
+            font-size: 1.8rem;
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .emoji-list span {
+            margin: 0 5px;
+        }
+        
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+        }
+        
+        .limited-badge {
+            background: linear-gradient(90deg, #ff0000, #ff6b6b);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        
+        .payment-amount {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            font-weight: bold;
+            text-align: center;
+            margin: 20px 0;
+            padding: 15px;
+            background: rgba(138, 43, 226, 0.1);
+            border-radius: 10px;
+            border: 2px dashed var(--primary-color);
+        }
+        
+        .map-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+            margin-top: 10px;
+        }
+        
+        .map-link:hover {
+            text-decoration: underline;
+            color: #7a1fd1;
+        }
+        
+        @media (max-width: 768px) {
+            .main-logo {
+                font-size: 3rem;
+            }
+            
+            .subtitle {
+                font-size: 1.2rem;
+                letter-spacing: 2px;
+            }
+            
+            .festival-dates {
+                font-size: 1.5rem;
+                padding: 8px 20px;
+            }
+            
+            .price-display {
+                font-size: 2.2rem;
+            }
+            
+            .full-pass-card:before {
+                top: 8px;
+                right: -30px;
+                padding: 4px 30px;
+                font-size: 0.7rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/5493764194658?text=Hola%20Aida,%20quiero%20reservar%20mi%20entrada%20soy%20" class="whatsapp-button" target="_blank" id="whatsappBtn">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Logo Header -->
+    <header class="logo-container">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1 class="main-logo">KIZ<span class="dot">.</span>MI<span class="dot">.</span>FEST</h1>
+                    <div class="subtitle">KIZOMBA MISIONES FESTIVAL</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="festival-dates">AGOSTO 14 AL 17 · 2026</div>
+                    <div class="location-badge">
+                        <i class="fas fa-map-marker-alt me-2"></i>HOTEL GRAN LATINO · PUERTO IGUAZÚ
+                    </div>
+                    
+                    <div class="early-bird-banner mt-3">
+                        <i class="fas fa-bolt me-2"></i>EARLY BIRD - FULL PASS GOLD
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Precios y Fases -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="full-pass-card">
+                        <div class="limited-badge">CUPOS LIMITADOS</div>
+                        <h3 class="fw-bold">FULL PASS GOLD</h3>
+                        <div class="price-display">U$D 300 <small>FASE ENERO</small></div>
+                        
+                        <div class="phase-prices">
+                            <h6 class="fw-bold mb-3 text-center">CINCO FASES DE PRECIO:</h6>
+                            <div class="phase-row phase-current">
+                                <span>FASE 1 - ENERO:</span>
+                                <span class="fw-bold">U$D 300</span>
+                            </div>
+                            <div class="phase-row">
+                                <span>FASE 2 - FEBRERO:</span>
+                                <span>U$D 330</span>
+                            </div>
+                            <div class="phase-row">
+                                <span>FASE 3 - ABRIL:</span>
+                                <span>U$D 360</span>
+                            </div>
+                            <div class="phase-row">
+                                <span>FASE 4 - JUNIO:</span>
+                                <span>U$D 380</span>
+                            </div>
+                            <div class="phase-row">
+                                <span>FASE 5 - AGOSTO:</span>
+                                <span>U$D 400</span>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-4">
+                            <h5>INCLUYE:</h5>
+                            <div class="row mt-3">
+                                <div class="col-md-6">
+                                    <p>• 4 noches de alojamiento</p>
+                                    <p>• Desayuno buffet cada día</p>
+                                    <p>• Cena cada noche</p>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>• Tres jornadas de talleres</p>
+                                    <p>• Tres noches de fiestas temáticas</p>
+                                    <p>• Experiencia completa + exclusividad</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <a href="#registration" class="btn btn-primary btn-lg mt-4">
+                            <i class="fas fa-gem me-2"></i>RESERVAR MI LUGAR
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Descripción del Evento -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12">
+                    <h2 class="section-title text-center">MÁS QUE UN FESTIVAL, UNA EXPERIENCIA</h2>
+                    
+                    <div class="emoji-list">
+                        <span>❤️‍🔥</span><span>🎶</span><span>🫶🏻</span><span>💯</span><span>🫂</span><span>🕺🏻</span><span>💃🏻</span><span>🎁</span><span>🕊️</span><span>🥰</span><span>🔝</span>
+                    </div>
+                    
+                    <div class="fs-5 text-center" style="line-height: 1.8;">
+                        <p><strong>KIZ.MI.FEST</strong> | Un espacio creado para quienes buscan más que un evento:<br>
+                        Una experiencia para salir de lo cotidiano, habitar el cuerpo y volver a conectar con lo esencial.</p>
+                        
+                        <p>Durante cuatro días compartimos bailes, aprendizaje, sociales y encuentros reales,<br>
+                        en un entorno cuidado, elegante y consciente.</p>
+                        
+                        <p>📍 <strong>Puerto Iguazú – Argentina</strong><br>
+                        📅 <strong>14 · 15 · 16 · 17 de agosto 2026</strong><br>
+                        🏨 <strong>Hotel Gran Latino</strong></p>
+                        
+                        <p>Y como experiencia adicional, cerramos el festival con un encuentro único en la naturaleza:<br>
+                        <strong>Cataratas del Iguazú</strong>, majestuosas, profundas, inolvidables.</p>
+                        
+                        <p class="fst-italic fs-4 mt-4">No es solo un festival.<br>
+                        Es una experiencia donde el cuerpo baila y el alma recuerda.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Información del Hotel Unificada -->
+            <div class="row mb-5">
+                <div class="col-12">
+                    <h2 class="section-title text-center">HOTEL GRAN LATINO - TU HOGAR DURANTE EL FESTIVAL</h2>
+                </div>
+                
+                <div class="col-md-10 mx-auto">
+                    <div class="hotel-card">
+                        <div class="row">
+                            <div class="col-md-5">
+                                <img src="assets/img/hotel.png" 
+                                     alt="Hotel Gran Latino" class="img-fluid h-100" style="object-fit: cover;">
+                            </div>
+                            <div class="col-md-7 p-4">
+                                <h3 class="fw-bold">Hotel Gran Latino ★★★★</h3>
+                                <p class="text-muted mb-4">Puerto Iguazú, a minutos de las Cataratas del Iguazú</p>
+                                
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="hotel-feature">
+                                            <i class="fas fa-map-marker-alt"></i>
+                                            <div>
+                                                <strong>Ubicación privilegiada</strong><br>
+                                                <small>Av. Victoria Aguirre 391, Puerto Iguazú</small>
+                                                <small class="d-block">A 5 minutos del centro de la ciudad</small>
+                                                <a href="https://www.google.com/maps?q=Hotel+Gran+Latino+Puerto+Iguazú" class="map-link" target="_blank">
+                                                    <i class="fas fa-map-marker-alt me-1"></i>Ver ubicación en Google Maps
+                                                </a>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="hotel-feature">
+                                            <i class="fas fa-bed"></i>
+                                            <div>
+                                                <strong>Habitaciones</strong><br>
+                                                <small>Cuádruples, triples y dobles</small>
+                                                <small class="d-block">Confort y atención personalizada</small>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="hotel-feature">
+                                            <i class="fas fa-swimming-pool"></i>
+                                            <div>
+                                                <strong>Piscina</strong><br>
+                                                <small>Área de relax con piscina</small>
+                                                <small class="d-block">Para refrescarse después de los talleres</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-md-6">
+                                        <div class="hotel-feature">
+                                            <i class="fas fa-coffee"></i>
+                                            <div>
+                                                <strong>Desayuno Buffet</strong><br>
+                                                <small>Variedad de opciones dulces y saladas</small>
+                                                <small class="d-block">Frutas frescas, jugos, café y té</small>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="hotel-feature">
+                                            <i class="fas fa-utensils"></i>
+                                            <div>
+                                                <strong>Cena Cada Noche</strong><br>
+                                                <small>Menú variado con varios tipos de comida</small>
+                                                <small class="d-block">Opciones para todos los gustos</small>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="hotel-feature">
+                                            <i class="fas fa-wifi"></i>
+                                            <div>
+                                                <strong>Wi-Fi Gratuito</strong><br>
+                                                <small>Conexión en todas las áreas del hotel</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="mt-4 pt-3 border-top">
+                                    <p class="mb-0"><strong>El Hotel Gran Latino es nuestro hogar durante los 4 días del festival, ofreciendo todo el confort y servicios necesarios para una experiencia inolvidable.</strong></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Artistas -->
+            <div class="row mb-5">
+                <div class="col-12">
+                    <h2 class="section-title text-center">ARTISTAS INTERNACIONALES</h2>
+                </div>
+                
+                <!-- Artistas - Solo enlaces a Instagram -->
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="artist-card">
+                        <div class="artist-img" style="background-image: url('assets/img/edy.png')"></div>
+                        <div class="p-3">
+                            <h5 class="fw-bold">EDDY VENTS</h5>
+                            <p class="text-muted">Instructor de Kizomba Semba</p>
+                            <a href="https://instagram.com/eddyvents" class="instagram-handle" target="_blank">
+                                <i class="fab fa-instagram me-1"></i>@eddyvents
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="artist-card">
+                        <div class="artist-img" style="background-image: url('assets/img/vinicius.png')"></div>
+                        <div class="p-3">
+                            <h5 class="fw-bold">VINICIUS BORGES</h5>
+                            <p class="text-muted">Maestro de Bachata</p>
+                            <a href="https://instagram.com/viniborges89" class="instagram-handle" target="_blank">
+                                <i class="fab fa-instagram me-1"></i>@viniborges89
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="artist-card">
+                        <div class="artist-img" style="background-image: url('assets/img/flopy.png')"></div>
+                        <div class="p-3">
+                            <h5 class="fw-bold">FLOPY VERNI</h5>
+                            <p class="text-muted">Instructora de Kizomba</p>
+                            <a href="https://instagram.com/flopyverni" class="instagram-handle" target="_blank">
+                                <i class="fab fa-instagram me-1"></i>@flopyverni
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="artist-card">
+                        <div class="artist-img" style="background-image: url('assets/img/kattia.png')"></div>
+                        <div class="p-3">
+                            <h5 class="fw-bold">KATTIA AL SERRA</h5>
+                            <p class="text-muted">Instructora y bailarina</p>
+                            <a href="https://instagram.com/kattialserrano" class="instagram-handle" target="_blank">
+                                <i class="fab fa-instagram me-1"></i>@kattialserrano
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="artist-card">
+                        <div class="artist-img" style="background-image: url('assets/img/rafa.png')"></div>
+                        <div class="p-3">
+                            <h5 class="fw-bold">RAFA KIZOMBA</h5>
+                            <p class="text-muted">Instructor especializado</p>
+                            <a href="https://instagram.com/rafakizomba" class="instagram-handle" target="_blank">
+                                <i class="fab fa-instagram me-1"></i>@rafakizomba
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="artist-card">
+                        <div class="artist-img" style="background-image: url('assets/img/santi.png')"></div>
+                        <div class="p-3">
+                            <h5 class="fw-bold">DI SANTI AGUILERA</h5>
+                            <p class="text-muted">Dj de Buenos Aires</p>
+                            <a href="https://instagram.com/santi_aguilera_" class="instagram-handle" target="_blank">
+                                <i class="fab fa-instagram me-1"></i>@santi_aguilera_
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 col-sm-6 mb-4 offset-md-2">
+                    <div class="artist-card">
+                        <div class="artist-img" style="background-image: url('assets/img/indyo.png')"></div>
+                        <div class="p-3">
+                            <h5 class="fw-bold">INDYO FILMS</h5>
+                            <p class="text-muted">Videógrafo oficial</p>
+                            <a href="https://instagram.com/indyo.films" class="instagram-handle" target="_blank">
+                                <i class="fab fa-instagram me-1"></i>@indyo.films
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="artist-card">
+                        <div class="artist-img" style="background-image: url('assets/img/carlos.png')"></div>
+                        <div class="p-3">
+                            <h5 class="fw-bold">CARLOS MACHUCA</h5>
+                            <p class="text-muted">Fotógrafo oficial</p>
+                            <a href="https://instagram.com/carlosmachucafotografia" class="instagram-handle" target="_blank">
+                                <i class="fab fa-instagram me-1"></i>@carlosmachucafotografia
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Temática de Vestimenta -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12">
+                    <h2 class="section-title text-center">TEMÁTICAS DE VESTIMENTA</h2>
+                    <p class="text-center">Cada noche tiene una temática especial. ¡Vístete para la ocasión!</p>
+                </div>
+            </div>
+            
+            <!-- Temática de Vestimenta DETALLADA -->
+            <div class="row">
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="theme-card">
+                        <div class="mb-3">
+                            <i class="fas fa-gem text-primary fa-3x"></i>
+                        </div>
+                        <h5>VIERNES 14</h5>
+                        <h4 class="fw-bold text-primary">GLAMOUR & ELENGANCIA</h4>
+                        <p><strong>Ellas:</strong> Blanco total o Plateado<br>
+                        <strong>Ellos:</strong> Camisa Blanca, pantalón negro (corbata negra o moño)</p>
+                        <p class="text-muted small">Noche de apertura sofisticada</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="theme-card">
+                        <div class="mb-3">
+                            <i class="fas fa-leaf text-primary fa-3x"></i>
+                        </div>
+                        <h5>SÁBADO 15</h5>
+                        <h4 class="fw-bold text-primary">AFRICAN NIGHT</h4>
+                        <p>Inspirado en la selva misionera<br>
+                        Colores vibrantes, estampados africanos<br>
+                        Accesorios étnicos y mucho ritmo</p>
+                        <p class="text-muted small">Celebra las raíces</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="theme-card">
+                        <div class="mb-3">
+                            <i class="fas fa-tshirt text-primary fa-3x"></i>
+                        </div>
+                        <h5>DOMINGO 16</h5>
+                        <h4 class="fw-bold text-primary">NOCHE DENIM</h4>
+                        <p>Viste tu mejor estilo con denim<br>
+                        Jeans, chaquetas, shorts y accesorios<br>
+                        Combinaciones creativas en azul</p>
+                        <p class="text-muted small">Estilo casual chic</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formulario de Registro -->
+    <section id="registration" class="py-5 bg-light">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12">
+                    <h2 class="section-title text-center">RESERVA TU LUGAR</h2>
+                    <p class="text-center">Completa el formulario para reservar tu lugar en el KIZ.MI.FEST</p>
+                    
+                    <div class="payment-amount">
+                        VALOR ACTUAL: <span id="currentPhasePrice">U$D 300</span> (FASE ENERO)
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="form-section">
+                        <form id="registrationForm">
+                            <div class="alert alert-info mb-4">
+                                <h5><i class="fas fa-info-circle me-2"></i>Proceso de Reserva</h5>
+                                <p class="mb-0">1. Completa este formulario<br>
+                                2. Se abrirá WhatsApp automáticamente para que envíes tu comprobante<br>
+                                3. ¡Listo! Confirmaremos tu reserva</p>
+                            </div>
+                            
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label class="form-label">Nombre Completo *</label>
+                                    <input type="text" class="form-control" id="fullName" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Teléfono con WhatsApp *</label>
+                                    <input type="tel" class="form-control" id="phone" required>
+                                    <small class="text-muted">Incluye código de país y área</small>
+                                </div>
+                            </div>
+                            
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label class="form-label">DNI / Pasaporte *</label>
+                                    <input type="text" class="form-control" id="dni" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">País de Origen *</label>
+                                    <input type="text" class="form-control" id="country" required>
+                                </div>
+                            </div>
+                            
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label class="form-label">Ciudad *</label>
+                                    <input type="text" class="form-control" id="city" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">¿Te interesa la excursión a las Cataratas (Lunes 17)? *</label>
+                                    <select class="form-select" id="excursion" required>
+                                        <option value="">Seleccionar</option>
+                                        <option value="si">Sí, me interesa (consultar precio)</option>
+                                        <option value="no">No, gracias</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label class="form-label">Tipo de Habitación Preferida *</label>
+                                <div class="row">
+                                    <div class="col-md-4 mb-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="roomType" id="roomDouble" value="doble" required>
+                                            <label class="form-check-label" for="roomDouble">
+                                                <strong>Habitación Doble</strong><br>
+                                                <small>Para 2 personas</small>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="roomType" id="roomTriple" value="triple">
+                                            <label class="form-check-label" for="roomTriple">
+                                                <strong>Habitación Triple</strong><br>
+                                                <small>Para 3 personas</small>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="roomType" id="roomQuad" value="cuadruple">
+                                            <label class="form-check-label" for="roomQuad">
+                                                <strong>Habitación Cuádruple</strong><br>
+                                                <small>Para 4 personas</small>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <small class="text-muted">La asignación final está sujeta a disponibilidad</small>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label class="form-label">¿Tienes alguna pregunta o requerimiento especial?</label>
+                                <textarea class="form-control" id="comments" rows="3" placeholder="Alergias alimentarias, necesidades especiales, etc."></textarea>
+                            </div>
+                            
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="terms" required>
+                                <label class="form-check-label" for="terms">Acepto los términos y condiciones del evento y la política de cancelación*</label>
+                            </div>
+                            
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary btn-lg px-5">
+                                    <i class="fab fa-whatsapp me-2"></i>ENVIAR Y ABRIR WHATSAPP
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                    
+                    <!-- Información de Transferencia -->
+                    <div class="transfer-info mt-4">
+                        <h5><i class="fas fa-university me-2"></i>DATOS PARA TRANSFERENCIA</h5>
+                        
+                        <div class="transfer-detail">
+                            <div>
+                                <strong>Nombre del titular:</strong><br>
+                                <span>Aida Lina Vazquez</span>
+                            </div>
+                            <button class="btn btn-copy" onclick="copyToClipboard('Aida Lina Vazquez', this)">
+                                <i class="far fa-copy"></i>
+                            </button>
+                        </div>
+                        
+                        <div class="transfer-detail">
+                            <div>
+                                <strong>CUIL:</strong><br>
+                                <span>27-94208669-0</span>
+                            </div>
+                            <button class="btn btn-copy" onclick="copyToClipboard('27-94208669-0', this)">
+                                <i class="far fa-copy"></i>
+                            </button>
+                        </div>
+                        
+                        <div class="transfer-detail">
+                            <div>
+                                <strong>N° de cuenta:</strong><br>
+                                <span>CA $ 27204078410451</span>
+                            </div>
+                            <button class="btn btn-copy" onclick="copyToClipboard('CA $ 27204078410451', this)">
+                                <i class="far fa-copy"></i>
+                            </button>
+                        </div>
+                        
+                        <div class="transfer-detail">
+                            <div>
+                                <strong>Alias:</strong><br>
+                                <span>expansionkiz</span>
+                            </div>
+                            <button class="btn btn-copy" onclick="copyToClipboard('expansionkiz', this)">
+                                <i class="far fa-copy"></i>
+                            </button>
+                        </div>
+                        
+                        <div class="transfer-detail">
+                            <div>
+                                <strong>CBU:</strong><br>
+                                <span>0110407730040784104515</span>
+                            </div>
+                            <button class="btn btn-copy" onclick="copyToClipboard('0110407730040784104515', this)">
+                                <i class="far fa-copy"></i>
+                            </button>
+                        </div>
+                        
+                        <div class="alert alert-warning mt-3 mb-0">
+                            <i class="fas fa-exclamation-triangle me-2"></i>
+                            <strong>IMPORTANTE:</strong> Una vez realizada la transferencia, envía el comprobante por WhatsApp a Aida al <strong>+54 9 376 419-4658</strong>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center mt-4">
+                        <p class="text-muted"><small>*El Full Pass Gold a USD 300 es por persona y aplica solo para reservas anticipadas de enero.<br>
+                        Incluye 4 noches de alojamiento, desayuno, cena, talleres y fiestas temáticas.<br>
+                        No incluye excursión a las Cataratas ni traslados aeropuerto-hotel.</small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <h4>KIZ<span class="dot">.</span>MI<span class="dot">.</span>FEST</h4>
+                    <p class="mb-2">KIZOMBA MISIONES FESTIVAL</p>
+                    <p>Una experiencia donde el cuerpo baila y el alma recuerda.</p>
+                    <div class="mb-3">
+                        <a href="https://www.instagram.com/expansionkizmisiones/" class="text-white me-3" target="_blank">
+                            <i class="fab fa-instagram fa-lg"></i> @expansionkizmisiones
+                        </a>
+                    </div>
+                    <p class="mb-1"><strong>Organiza:</strong> expansionkizmisiones</p>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <h5>Contacto Directo</h5>
+                    <p><i class="fab fa-whatsapp me-2"></i>+54 9 376 419-4658 (Aida)</p>
+                    <p><i class="fas fa-map-marker-alt me-2"></i>Hotel Gran Latino</p>
+                    <p class="ms-4">Av. Victoria Aguirre 391</p>
+                    <p class="ms-4">Puerto Iguazú, Misiones</p>
+                    <a href="https://www.google.com/maps?q=Hotel+Gran+Latino+Puerto+Iguazú" class="text-white text-decoration-none" target="_blank">
+                        <i class="fas fa-map me-2"></i>Ver ubicación en Google Maps
+                    </a>
+                </div>
+            </div>
+            <hr class="bg-light">
+            <div class="text-center">
+                <p class="mb-0">© 2026 KIZ.MI.FEST - Kizomba Misiones Festival. Todos los derechos reservados.<br>
+                Puerto Iguazú · NEA Argentina</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Precios por fase
+        const phasePrices = {
+            'enero': 300,
+            'febrero': 330,
+            'abril': 360,
+            'junio': 380,
+            'agosto': 400
+        };
+
+        // Determinar fase actual basada en la fecha
+        function getCurrentPhase() {
+            const now = new Date();
+            const year = now.getFullYear();
+            const month = now.getMonth() + 1; // 1 = Enero, 2 = Febrero, etc.
+            
+            if (year === 2026) {
+                if (month <= 1) return 'enero'; // Enero
+                if (month <= 2) return 'febrero'; // Febrero
+                if (month <= 4) return 'abril'; // Abril
+                if (month <= 6) return 'junio'; // Junio
+                return 'agosto'; // Agosto
+            } else if (year < 2026) {
+                return 'enero'; // Antes de 2026
+            } else {
+                return 'agosto'; // Después de 2026
+            }
+        }
+
+        // Variables para el formulario
+        let userData = {};
+        let currentPhase = getCurrentPhase();
+        let currentPrice = phasePrices[currentPhase];
+        
+        // Inicializar la página
+        document.addEventListener('DOMContentLoaded', function() {
+            // Actualizar precio actual
+            updateCurrentPrice();
+            
+            // Configurar botón de WhatsApp inicial
+            updateWhatsAppButton();
+        });
+        
+        // Actualizar precio actual en la página
+        function updateCurrentPrice() {
+            const phaseNames = {
+                'enero': 'ENERO',
+                'febrero': 'FEBRERO', 
+                'abril': 'ABRIL',
+                'junio': 'JUNIO',
+                'agosto': 'AGOSTO'
+            };
+            
+            document.getElementById('currentPhasePrice').textContent = `U$D ${currentPrice} (FASE ${phaseNames[currentPhase]})`;
+            
+            // Resaltar fase actual en la tabla
+            document.querySelectorAll('.phase-row').forEach(row => {
+                row.classList.remove('phase-current');
+            });
+            
+            const phaseIndex = ['enero', 'febrero', 'abril', 'junio', 'agosto'].indexOf(currentPhase);
+            document.querySelectorAll('.phase-row')[phaseIndex].classList.add('phase-current');
+        }
+        
+        // Actualizar botón de WhatsApp con datos del formulario
+        function updateWhatsAppButton() {
+            const fullName = document.getElementById('fullName');
+            const phone = document.getElementById('phone');
+            
+            if (fullName && phone) {
+                fullName.addEventListener('input', function() {
+                    updateWhatsAppLink();
+                });
+                
+                phone.addEventListener('input', function() {
+                    updateWhatsAppLink();
+                });
+            }
+        }
+        
+        function updateWhatsAppLink() {
+            const fullName = document.getElementById('fullName').value || '[Nombre no especificado]';
+            const phone = document.getElementById('phone').value || '[Teléfono no especificado]';
+            
+            const message = `Hola Aida, quiero reservar mi entrada soy ${fullName}, mi teléfono es ${phone}.`;
+            const encodedMessage = encodeURIComponent(message);
+            
+            document.getElementById('whatsappBtn').href = `https://wa.me/5493764194658?text=${encodedMessage}`;
+        }
+        
+        // Copiar datos individuales al portapapeles (FUNCIONA CORRECTAMENTE)
+        function copyToClipboard(text, buttonElement) {
+            // Crear un elemento de texto temporal
+            const textArea = document.createElement("textarea");
+            textArea.value = text;
+            textArea.style.position = "fixed";
+            textArea.style.left = "-999999px";
+            textArea.style.top = "-999999px";
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            
+            try {
+                // Intentar usar el API moderno
+                const successful = document.execCommand('copy');
+                if (successful) {
+                    // Mostrar feedback visual
+                    const originalHTML = buttonElement.innerHTML;
+                    buttonElement.innerHTML = '<i class="fas fa-check"></i>';
+                    buttonElement.classList.remove('btn-copy');
+                    buttonElement.classList.add('btn-success');
+                    
+                    setTimeout(() => {
+                        buttonElement.innerHTML = originalHTML;
+                        buttonElement.classList.remove('btn-success');
+                        buttonElement.classList.add('btn-copy');
+                    }, 2000);
+                }
+            } catch (err) {
+                console.error('Error al copiar: ', err);
+            } finally {
+                // Limpiar
+                document.body.removeChild(textArea);
+            }
+        }
+        
+        // Manejar el envío del formulario
+        document.getElementById('registrationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Recoger datos del formulario
+            const roomType = document.querySelector('input[name="roomType"]:checked')?.value;
+            
+            userData = {
+                fullName: document.getElementById('fullName').value,
+                phone: document.getElementById('phone').value,
+                dni: document.getElementById('dni').value,
+                country: document.getElementById('country').value,
+                city: document.getElementById('city').value,
+                roomType: roomType,
+                excursion: document.getElementById('excursion').value,
+                comments: document.getElementById('comments').value || 'Ninguno',
+                phase: currentPhase,
+                price: currentPrice,
+                date: new Date().toLocaleString()
+            };
+            
+            // Guardar en localStorage (simulación de base de datos)
+            let registrations = JSON.parse(localStorage.getItem('kizmifestRegistrations')) || [];
+            registrations.push(userData);
+            localStorage.setItem('kizmifestRegistrations', JSON.stringify(registrations));
+            
+            // Construir mensaje de WhatsApp
+            let excursionText = userData.excursion === 'si' ? 'Sí, me interesa (consultar precio)' : 'No, gracias';
+            
+            const whatsappMessage = `Hola Aida, acabo de enviar mi solicitud para el KIZ.MI.FEST:\n\n` +
+                                  `*Nombre:* ${userData.fullName}\n` +
+                                  `*Teléfono:* ${userData.phone}\n` +
+                                  `*DNI:* ${userData.dni}\n` +
+                                  `*País:* ${userData.country}\n` +
+                                  `*Ciudad:* ${userData.city}\n` +
+                                  `*Habitación:* ${userData.roomType}\n` +
+                                  `*Excursión a Cataratas:* ${excursionText}\n` +
+                                  `*Comentarios:* ${userData.comments}\n` +
+                                  `*Fase:* ${currentPhase.toUpperCase()}\n` +
+                                  `*Valor a pagar:* U$D ${currentPrice}\n\n` +
+                                  `¡Quiero reservar mi lugar!`;
+            
+            const encodedMessage = encodeURIComponent(whatsappMessage);
+            const whatsappUrl = `https://wa.me/5493764194658?text=${encodedMessage}`;
+            
+            // Abrir WhatsApp automáticamente
+            window.open(whatsappUrl, '_blank');
+        });
+        
+        // Función para administrador (acceso oculto)
+        function adminAccess() {
+            const password = prompt("Ingrese la contraseña de administrador:");
+            if (password === "kizmifest2026") {
+                const registrations = JSON.parse(localStorage.getItem('kizmifestRegistrations')) || [];
+                let report = `TOTAL DE REGISTROS: ${registrations.length}\n\n`;
+                
+                registrations.forEach((r, i) => {
+                    report += `${i+1}. ${r.fullName} - ${r.phone}\n`;
+                    report += `   Fase: ${r.phase} - Valor: U$D ${r.price}\n`;
+                    report += `   Habitación: ${r.roomType} - Excursión: ${r.excursion}\n`;
+                    report += `   Fecha: ${r.date}\n\n`;
+                });
+                
+                alert(report);
+            } else if (password) {
+                alert("Contraseña incorrecta");
+            }
+        }
+        
+        // Agregar acceso de admin con doble click en el logo
+        document.querySelector('.main-logo').addEventListener('dblclick', adminAccess);
+    </script>
+</body>
+</html>
